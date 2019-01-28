@@ -1,0 +1,13 @@
+.box-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .box-list__element {
+    border: 1px solid darken($off-white, 7%);
+    text-align: center;
+    flex: 0 100%;
+    @media (min-width: $desktop-breakpoint) {
+      flex: 0 50%;
+    }
+  }
+}

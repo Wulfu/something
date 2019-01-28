@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div>
+    <div class="page-header">
+        <div class="content-container">
+            <div class="page-header__title">
+                <h1>Data ostatniej aktualizacji dla miasta {{ weather_data.name|trans({}, 'cities') }}: {{ last_weather_update|date('Y-m-d H:i:s') }}</h1>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="content-container">
+            <div class="box-list">
+                <div class="box-list__element">
+                    <p>Temperatura: {{ weather_data.main.temp }}&#8451;</p>
+                </div>
+                <div class="box-list__element">
+                    <p>Ciśnienie: {{ weather_data.main.pressure }} hPa</p>
+                </div>
+                <div class="box-list__element">
+                    <p>Prędkość wiatru: {{ weather_data.wind.speed }} km/h</p>
+                </div>
+                <div class="box-list__element">
+                    <p>Pogoda: {{ weather_data.weather[0].description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
